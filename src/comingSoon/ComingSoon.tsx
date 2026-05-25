@@ -1,9 +1,6 @@
 import { useState } from "react";
 import "./ComingSoon.css";
 
-const EMAILOCTOPUS_API_KEY = "eo_ab760d77bf2249a05b499d8b0d13f116f77d2a9412abda6af467a6a32573d184";
-const EMAILOCTOPUS_LIST_ID = "70a18bf2-5883-11f1-8308-67e795d45124";
-
 type Status = "idle" | "loading" | "success" | "error";
 
 export default function ComingSoon() {
