@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./ComingSoon.css";
 
-const EMAILOCTOPUS_FORM_ACTION =
-  "https://emailoctopus.com/lists/70a18bf2-5883-11f1-8308-67e795d45124/members/embedded/1.3/add";
+const EMAILOCTOPUS_API_KEY = "eo_ab760d77bf2249a05b499d8b0d13f116f77d2a9412abda6af467a6a32573d184";
+const EMAILOCTOPUS_LIST_ID = "70a18bf2-5883-11f1-8308-67e795d45124";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -29,20 +29,25 @@ export default function ComingSoon() {
     setStatus("loading");
 
     try {
-      const formData = new FormData();
-      formData.append("field[0]", email.trim());
-      formData.append("confirm_redirect", "");
+      const res = await fetch(
+        `https://emailoctopus.com/api/1.6/lists/${EMAILOCTOPUS_LIST_ID}/contacts`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            api_key: EMAILOCTOPUS_API_KEY,
+            email_address: email.trim(),
+            status: "SUBSCRIBED",
+          }),
+        }
+      );
 
-      const res = await fetch(EMAILOCTOPUS_FORM_ACTION, {
-        method: "POST",
-        body: formData,
-        mode: "no-cors",
-      });
-      void res;
+      const data = await res.json();
+      if (!res.ok) throw new Error(data?.error?.message || "Hiba történt.");
       setStatus("success");
-    } catch {
+    } catch (err: any) {
       setStatus("error");
-      setErrorMsg("Valami hiba történt. Kérjük, próbáld újra.");
+      setErrorMsg(err.message || "Valami hiba történt. Kérjük, próbáld újra.");
     }
   };
 
@@ -69,10 +74,7 @@ export default function ComingSoon() {
                 placeholder="Írd be az e-mail címed"
                 value={email}
                 autoComplete="email"
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                  if (errorMsg) setErrorMsg("");
-                }}
+                onChange={(e) => { setEmail(e.target.value); if (errorMsg) setErrorMsg(""); }}
                 onKeyDown={(e) => e.key === "Enter" && handleSubscribe()}
                 aria-label="E-mail cím"
               />
@@ -81,11 +83,7 @@ export default function ComingSoon() {
                 onClick={handleSubscribe}
                 disabled={status === "loading"}
               >
-                {status === "loading" ? (
-                  <div className="spinner" />
-                ) : (
-                  "Feliratkozás"
-                )}
+                {status === "loading" ? <div className="spinner" /> : "Feliratkozás"}
               </button>
             </div>
             {errorMsg && <p className="ks-error">{errorMsg}</p>}
@@ -93,7 +91,6 @@ export default function ComingSoon() {
         )}
 
         <p className="ks-coming-soon">Hamarosan elérhető</p>
-
       </div>
     </div>
   );

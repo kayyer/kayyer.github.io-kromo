@@ -7,9 +7,10 @@
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: flex-end;
   padding: 2rem clamp(1.5rem, 6vw, 5rem);
+  padding-bottom: 8vh;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -40,9 +41,8 @@
 .ks-input-row {
   display: flex;
   width: 100%;
-  border-radius: 50px;
-  overflow: hidden;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+  gap: 10px;
+  align-items: center;
 }
 
 .ks-input {
@@ -52,11 +52,13 @@
   background: #ffffff;
   border: none;
   outline: none;
+  border-radius: 50px;
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #1a1a1a;
   min-width: 0;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.25);
 }
 
 .ks-input::placeholder {
@@ -66,9 +68,10 @@
 .ks-btn {
   height: 54px;
   padding: 0 28px;
-  background: #e8186e;
+  background: #1a1a1a;
   border: none;
-  color: #ffffff;
+  border-radius: 50px;
+  color: #e8186e;
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   font-weight: 700;
@@ -79,11 +82,12 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.25);
 }
 
-.ks-btn:hover  { background: #c8105a; }
+.ks-btn:hover  { background: #333; }
 .ks-btn:active { transform: scale(0.97); }
-.ks-btn:disabled { background: rgba(232,24,110,0.5); cursor: not-allowed; }
+.ks-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
 .ks-error {
   font-size: 13px;
@@ -132,8 +136,8 @@
 .spinner {
   width: 15px;
   height: 15px;
-  border: 2px solid rgba(255,255,255,0.35);
-  border-top-color: #fff;
+  border: 2px solid rgba(232,24,110,0.35);
+  border-top-color: #e8186e;
   border-radius: 50%;
   animation: spin 0.7s linear infinite;
 }
@@ -149,6 +153,13 @@
   .ks-content {
     align-items: center;
     text-align: center;
+  }
+  .ks-input-row {
+    flex-direction: column;
+  }
+  .ks-input, .ks-btn {
+    width: 100%;
+    justify-content: center;
   }
   .ks-error {
     text-align: center;
