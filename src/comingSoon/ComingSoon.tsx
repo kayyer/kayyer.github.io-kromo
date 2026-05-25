@@ -29,18 +29,11 @@ export default function ComingSoon() {
     setStatus("loading");
 
     try {
-      const res = await fetch(
-        `https://emailoctopus.com/api/1.6/lists/${EMAILOCTOPUS_LIST_ID}/contacts`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            api_key: EMAILOCTOPUS_API_KEY,
-            email_address: email.trim(),
-            status: "SUBSCRIBED",
-          }),
-        }
-      );
+      const res = await fetch("https://test.szarvady-ambrus.workers.dev/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email.trim() }),
+      });
 
       const data = await res.json();
       if (!res.ok) throw new Error(data?.error?.message || "Hiba történt.");
