@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+.ak-wrap {
+  min-height: 100vh;
+  background-color: #0f0f0f;
+  background-image: url('../assets/KROMOGEAR_LAUNCH.webp'), url('../assets/KROMOGEAR_LAUNCH.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  padding: clamp(1.5rem, 4vw, 3rem) clamp(1rem, 6vw, 3rem);
+}
+
+/* dark overlay so text is readable over the image */
+.ak-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ak-container {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* ── Back button ── */
+.ak-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255,255,255,0.5);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  margin-bottom: 2.5rem;
+  transition: color 0.2s;
+}
+
+.ak-back:hover { color: #e8186e; }
+
+.ak-back svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ── Header ── */
+.ak-header {
+  margin-bottom: 3rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding-bottom: 2rem;
+}
+
+.ak-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #e8186e;
+  margin: 0 0 0.75rem;
+}
+
+.ak-title {
+  font-size: clamp(32px, 6vw, 52px);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  margin: 0 0 1rem;
+}
+
+.ak-date {
+  font-size: 13px;
+  color: rgba(255,255,255,0.35);
+  margin: 0;
+}
+
+/* ── Sections ── */
+.ak-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.ak-section {
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 1.75rem 0;
+}
+
+.ak-section:last-child {
+  border-bottom: none;
+}
+
+.ak-section-title {
+  font-size: clamp(13px, 1.8vw, 16px);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #e8186e;
+  margin: 0 0 1rem;
+}
+
+.ak-section-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.ak-section-body p {
+  font-size: clamp(14px, 1.4vw, 15px);
+  font-weight: 400;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.ak-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ak-list li {
+  font-size: clamp(14px, 1.4vw, 15px);
+  font-weight: 400;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.6;
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.ak-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #e8186e;
+}
+
+.ak-label {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.ak-highlight {
+  color: #e8186e;
+  font-weight: 600;
+}
+
+.ak-note {
+  background: rgba(255,255,255,0.04);
+  border-left: 3px solid #e8186e;
+  padding: 0.75rem 1rem;
+  border-radius: 0 8px 8px 0;
+}
+
+.ak-authority {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-top: 0.5rem;
+}
+
+.ak-authority p {
+  font-size: 14px !important;
+  color: rgba(255,255,255,0.6) !important;
+}
+
+.ak-link {
+  color: #e8186e;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.ak-link:hover { opacity: 0.75; }
+
+/* ── Footer ── */
+.ak-footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ak-footer p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.35);
+  margin: 0;
+}
+
+.ak-copyright {
+  font-size: 12px !important;
+  color: rgba(255,255,255,0.2) !important;
+}
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .ak-wrap {
+    background-attachment: scroll;
+  }
+}

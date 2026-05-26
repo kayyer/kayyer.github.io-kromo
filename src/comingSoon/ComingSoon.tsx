@@ -1,9 +1,6 @@
 import { useState } from "react";
 import "./ComingSoon.css";
 
-const EMAILOCTOPUS_API_KEY = "eo_ab760d77bf2249a05b499d8b0d13f116f77d2a9412abda6af467a6a32573d184";
-const EMAILOCTOPUS_LIST_ID = "70a18bf2-5883-11f1-8308-67e795d45124";
-
 type Status = "idle" | "loading" | "success" | "error";
 
 export default function ComingSoon() {
@@ -29,18 +26,11 @@ export default function ComingSoon() {
     setStatus("loading");
 
     try {
-      const res = await fetch(
-        `https://emailoctopus.com/api/1.6/lists/${EMAILOCTOPUS_LIST_ID}/contacts`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            api_key: EMAILOCTOPUS_API_KEY,
-            email_address: email.trim(),
-            status: "SUBSCRIBED",
-          }),
-        }
-      );
+      const res = await fetch("https://test.szarvady-ambrus.workers.dev/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email.trim() }),
+      });
 
       const data = await res.json();
       if (!res.ok) throw new Error(data?.error?.message || "Hiba történt.");
@@ -57,47 +47,51 @@ export default function ComingSoon() {
       <div className="ks-spacer" />
 
       <div className="ks-content">
-        <div style={{flexDirection: "column"}} className="flex items-center justify-center gap-5 p-2  w-1/2 md:w-1/2 w-5/6">
-        <p className="ks-tagline">
-          Iratkozz fel, hogy elsőként<br />értesülhess az indulásról!
-        </p>
+        <div style={{ flexDirection: "column" }} className="flex items-center justify-center gap-5 p-2  w-1/2 md:w-1/2 w-5/6">
+          <p className="ks-tagline">
+            Iratkozz fel, hogy elsőként<br />értesülhess az indulásról!
+          </p>
 
-        {status === "success" ? (
-          <div className="ks-success">
-            <p className="ks-success-title">Sikeresen feliratkoztál!</p>
-            <p className="ks-success-sub">
-              Értesítjük a következő címen: <strong>{email}</strong>
-            </p>
-          </div>
-        ) : (
-          <>
-            <div className="ks-input-row">
-              <input
-                className="ks-input"
-                type="email"
-                placeholder="Írd be az e-mail címed"
-                value={email}
-                autoComplete="email"
-                onChange={(e) => { setEmail(e.target.value); if (errorMsg) setErrorMsg(""); }}
-                onKeyDown={(e) => e.key === "Enter" && handleSubscribe()}
-                aria-label="E-mail cím"
-              />
-              <button
-                className="ks-btn"
-                onClick={handleSubscribe}
-                disabled={status === "loading"}
-              >
-                {status === "loading" ? <div className="spinner" /> : "Feliratkozás"}
-              </button>
+          {status === "success" ? (
+            <div className="ks-success">
+              <p className="ks-success-title">Sikeresen feliratkoztál!</p>
+              <p className="ks-success-sub">
+                Értesítjük a következő címen: <strong>{email}</strong>
+              </p>
             </div>
-            {errorMsg && <p className="ks-error">{errorMsg}</p>}
-          </>
-        )}
+          ) : (
+            <>
+              <div className="ks-input-row">
+                <input
+                  className="ks-input"
+                  type="email"
+                  placeholder="Írd be az e-mail címed"
+                  value={email}
+                  autoComplete="email"
+                  onChange={(e) => { setEmail(e.target.value); if (errorMsg) setErrorMsg(""); }}
+                  onKeyDown={(e) => e.key === "Enter" && handleSubscribe()}
+                  aria-label="E-mail cím"
+                />
+                <button
+                  className="ks-btn"
+                  onClick={handleSubscribe}
+                  disabled={status === "loading"}
+                >
+                  {status === "loading" ? <div className="spinner" /> : "Feliratkozás*"}
+                </button>
+              </div>
+              {errorMsg && <p className="ks-error">{errorMsg}</p>}
+            </>
+          )}
 
-        <p className="ks-coming-soon">Hamarosan elérhető</p>
+          <p className="ks-coming-soon">Hamarosan elérhető</p>
+
+          <p className="ks-legal">
+            *Feliratkozással elfogadod az{" "}
+            <a href="#/adatkezeles" className="ks-legal-link">Adatkezelési tájékoztatónkat</a>.
+          </p>
+        </div>
       </div>
-            </div>
-F
     </div>
   );
 }
