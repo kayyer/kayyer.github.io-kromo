@@ -16,7 +16,7 @@
 
 /* spacer pushes content below the title in the image */
 .ks-spacer {
-  min-height: 65%;
+  min-height: 60%;
 }
 
 /* ── Content block ── */
@@ -56,8 +56,7 @@
 
 .ks-input {
   flex: 1;
-  height: clamp(44px, 5vh, 56px);
-  padding: 0 clamp(14px, 2vw, 22px);
+  padding: 2% !important;
   background: #ffffff;
   border: none;
   outline: none;

@@ -70,7 +70,7 @@ export default function ComingSoon() {
           </div>
         ) : (
           <>
-            <div className="ks-input-row p-2">
+            <div className="ks-input-row">
               <input
                 className="ks-input"
                 type="email"
