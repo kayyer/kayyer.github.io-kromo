@@ -1,28 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap');
 
 /* ── Background ── */
 .ks-wrap {
   min-height: 100vh;
-  min-height: 100dvh; /* mobile browsers with address bar */
-  background-color: #2a2a2a; /* placeholder color while image loads */
+  min-height: 100dvh;
+  background-color: #2a2a2a;
   background-image: url('../assets/KROMOGEAR_LAUNCH.webp'), url('../assets/KROMOGEAR_LAUNCH.jpg');
   background-size: cover;
-  background-position: center top;
+  background-position: center center;
   background-repeat: no-repeat;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  padding: 2rem clamp(1rem, 6vw, 5rem) clamp(2rem, 8vh, 5rem);
+  display: grid;
+  grid-template-rows: 1fr auto;
   font-family: 'Montserrat', sans-serif;
+}
+
+/* spacer pushes content below the title in the image */
+.ks-spacer {
+  min-height: 52%;
 }
 
 /* ── Content block ── */
 .ks-content {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  width: min(480px, 100%);
-  gap: 1.25rem;
+  align-items: flex-end;
+  text-align: right;
+  width: 100%;
+  padding: 0 clamp(1rem, 5vw, 8rem) clamp(1.5rem, 4vh, 4rem);
+  gap: clamp(0.75rem, 1.5vh, 1.25rem);
   animation: fadeUp 0.6s ease both;
 }
 
@@ -33,7 +38,7 @@
 
 /* ── Tagline ── */
 .ks-tagline {
-  font-size: clamp(16px, 3.5vw, 26px);
+  font-size: clamp(14px, 2.2vw, 26px);
   font-weight: 600;
   color: #ffffff;
   line-height: 1.35;
@@ -44,25 +49,26 @@
 /* ── Input row ── */
 .ks-input-row {
   display: flex;
-  width: 100%;
-  gap: 10px;
+  width: min(480px, 100%);
+  gap: clamp(6px, 1vw, 12px);
   align-items: center;
 }
 
 .ks-input {
   flex: 1;
-  height: 52px;
-  padding: 0 20px;
+  height: clamp(44px, 5vh, 56px);
+  padding: 0 clamp(14px, 2vw, 22px);
   background: #ffffff;
   border: none;
   outline: none;
   border-radius: 50px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
+  font-size: clamp(13px, 1.2vw, 15px);
   font-weight: 400;
   color: #1a1a1a;
   min-width: 0;
   box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+  box-sizing: border-box;
 }
 
 .ks-input::placeholder { color: #999; }
@@ -73,14 +79,14 @@
 
 /* ── Button ── */
 .ks-btn {
-  height: 52px;
-  padding: 0 24px;
+  height: clamp(44px, 5vh, 56px);
+  padding: 0 clamp(16px, 2vw, 26px);
   background: #1a1a1a;
   border: none;
   border-radius: 50px;
   color: #e8186e;
   font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
+  font-size: clamp(13px, 1.2vw, 15px);
   font-weight: 700;
   letter-spacing: 0.02em;
   cursor: pointer;
@@ -92,6 +98,7 @@
   gap: 8px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.3);
   flex-shrink: 0;
+  box-sizing: border-box;
 }
 
 .ks-btn:hover   { background: #333; }
@@ -100,22 +107,21 @@
 
 /* ── Error ── */
 .ks-error {
-  font-size: 13px;
+  font-size: clamp(12px, 1vw, 13px);
   font-weight: 500;
   color: #ff6b6b;
   text-shadow: 0 1px 4px rgba(0,0,0,0.4);
-  margin: -0.5rem 0 0 4px;
+  margin: -0.25rem 0 0;
 }
 
 /* ── Coming soon label ── */
 .ks-coming-soon {
-  font-size: clamp(11px, 1.8vw, 14px);
+  font-size: clamp(10px, 1.1vw, 14px);
   font-weight: 800;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: #ffffff;
   text-shadow: 0 1px 8px rgba(0,0,0,0.4);
-  margin-top: 0.25rem;
 }
 
 /* ── Success ── */
@@ -124,17 +130,18 @@
   flex-direction: column;
   gap: 0.5rem;
   animation: fadeUp 0.4s ease both;
+  text-align: right;
 }
 
 .ks-success-title {
-  font-size: clamp(18px, 4vw, 22px);
+  font-size: clamp(16px, 2.5vw, 22px);
   font-weight: 800;
   color: #ffffff;
   text-shadow: 0 1px 8px rgba(0,0,0,0.4);
 }
 
 .ks-success-sub {
-  font-size: 14px;
+  font-size: clamp(13px, 1.2vw, 15px);
   font-weight: 400;
   color: rgba(255,255,255,0.8);
   text-shadow: 0 1px 4px rgba(0,0,0,0.3);
@@ -157,48 +164,42 @@
 
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* ── Mobile ── */
+/* ── Mobile (portrait) ── */
 @media (max-width: 600px) {
-  .ks-wrap {
-    justify-content: center;
-    align-items: flex-end;
-    background-position: 30% center; /* show the dog better on mobile */
+  .ks-spacer {
+    min-height: 45%;
   }
 
   .ks-content {
     align-items: center;
     text-align: center;
-    width: 100%;
+    padding: 0 1.25rem clamp(1.5rem, 5vh, 3rem);
+    gap: 1rem;
+  }
+
+  .ks-tagline {
+    font-size: clamp(16px, 5vw, 22px);
   }
 
   .ks-input-row {
     flex-direction: column;
+    width: 100%;
     gap: 12px;
   }
 
   .ks-input {
     width: 100%;
-    height: 50px;
+    height: 56px;
+    font-size: 16px; /* prevent iOS zoom */
+    padding: 0 24px;
   }
 
   .ks-btn {
     width: 100%;
-    height: 50px;
+    height: 56px;
+    font-size: 15px;
   }
 
-  .ks-error {
-    text-align: center;
-    margin-left: 0;
-  }
-}
-
-/* ── Tablet ── */
-@media (min-width: 601px) and (max-width: 900px) {
-  .ks-wrap {
-    justify-content: center;
-  }
-  .ks-content {
-    align-items: center;
-    text-align: center;
-  }
+  .ks-error { text-align: center; }
+  .ks-success { text-align: center; }
 }
