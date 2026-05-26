@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./ComingSoon.css";
+import { Image } from "@fluentui/react-components";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -44,9 +45,18 @@ export default function ComingSoon() {
   return (
     <div className="ks-wrap">
       {/* spacer pushes content below the kromogear title in the background image */}
-      <div className="ks-spacer" />
 
-      <div className="ks-content">
+
+      <div className="flex justify-end ks-content">
+        <Image
+          src="./src/assets/KROMOGEAR.png"
+          alt="KromoGear Logo"
+          style={{
+            width: "50%",
+            maxWidth: "50%",
+            height: "auto"
+          }}
+        />
         <div style={{ flexDirection: "column" }} className="flex items-center justify-center gap-5 p-2  w-1/2 md:w-1/2 w-5/6">
           <p className="ks-tagline">
             Iratkozz fel, hogy elsőként<br />értesülhess az indulásról!

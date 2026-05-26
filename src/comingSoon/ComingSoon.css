@@ -5,13 +5,19 @@
   min-height: 100vh;
   min-height: 100dvh;
   background-color: #2a2a2a;
-  background-image: url('../assets/KROMOGEAR_LAUNCH.webp'), url('../assets/KROMOGEAR_LAUNCH.jpg');
+  background-image: url('../assets/KROMOGEAR_DESKTOP.webp');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   display: grid;
   grid-template-rows: 1fr auto;
   font-family: 'Montserrat', sans-serif;
+}
+
+@media (max-width: 768px) {
+  .ks-wrap {
+    background-image: url('../assets/KROMOGEAR_MOBIL.webp');
+  }
 }
 
 /* spacer pushes content below the title in the image */
@@ -89,10 +95,10 @@
 .ks-btn {
   height: clamp(44px, 5vh, 56px);
   padding: 0 clamp(16px, 2vw, 26px);
-  background: #35373b;
+  background: #000000;
   border: none;
   border-radius: 50px;
-  color: #ea028c;
+  color: #ec008c;
   font-family: 'Montserrat', sans-serif;
   font-size: clamp(13px, 1.2vw, 15px);
   font-weight: 700;
@@ -156,8 +162,16 @@
 }
 
 .ks-success-sub strong {
-  color: #ea028c;
+  color: #ec008c;
   font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  img[alt="KromoGear Logo"] {
+    width: 95% !important;
+    max-width: 95% !important;
+    margin-bottom: 1rem;
+  }
 }
 
 /* ── Spinner ── */
@@ -203,7 +217,6 @@
   }
 
   .ks-btn {
-    width: 45%;
     font-size: 15px;
   }
 
