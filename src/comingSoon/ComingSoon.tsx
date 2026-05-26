@@ -57,6 +57,7 @@ export default function ComingSoon() {
       <div className="ks-spacer" />
 
       <div className="ks-content">
+        <div style={{flexDirection: "column"}} className="flex items-center justify-center gap-5 w-1/2">
         <p className="ks-tagline">
           Iratkozz fel, hogy elsőként<br />értesülhess az indulásról!
         </p>
@@ -95,6 +96,8 @@ export default function ComingSoon() {
 
         <p className="ks-coming-soon">Hamarosan elérhető</p>
       </div>
+            </div>
+F
     </div>
   );
 }

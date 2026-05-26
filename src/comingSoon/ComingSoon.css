@@ -24,7 +24,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  text-align: right;
+  text-align: center;
   width: 100%;
   padding: 0 clamp(1rem, 5vw, 8rem) clamp(1.5rem, 4vh, 4rem);
   gap: clamp(0.75rem, 1.5vh, 1.25rem);
@@ -56,7 +56,7 @@
 
 .ks-input {
   flex: 1;
-  padding: 2% !important;
+  padding: 10px !important;
   background: #ffffff;
   border: none;
   outline: none;
