@@ -56,7 +56,7 @@ export default function ComingSoon() {
             <div className="ks-success">
               <p className="ks-success-title">Sikeresen feliratkoztál!</p>
               <p className="ks-success-sub">
-                Értesítjük a következő címen: <strong>{email}</strong>
+                Értesítünk a következő címen: <strong>{email}</strong>
               </p>
             </div>
           ) : (
