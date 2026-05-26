@@ -89,10 +89,10 @@
 .ks-btn {
   height: clamp(44px, 5vh, 56px);
   padding: 0 clamp(16px, 2vw, 26px);
-  background: #1a1a1a;
+  background: #35373b;
   border: none;
   border-radius: 50px;
-  color: #e8186e;
+  color: #ea028c;
   font-family: 'Montserrat', sans-serif;
   font-size: clamp(13px, 1.2vw, 15px);
   font-weight: 700;
@@ -156,7 +156,7 @@
 }
 
 .ks-success-sub strong {
-  color: #e8186e;
+  color: #ea028c;
   font-weight: 600;
 }
 

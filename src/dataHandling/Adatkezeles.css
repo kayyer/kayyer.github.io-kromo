@@ -43,7 +43,7 @@
   transition: color 0.2s;
 }
 
-.ak-back:hover { color: #e8186e; }
+.ak-back:hover { color: #ea028c; }
 
 .ak-back svg {
   width: 16px;
@@ -62,7 +62,7 @@
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #e8186e;
+  color: #ea028c;
   margin: 0 0 0.75rem;
 }
 
@@ -101,7 +101,7 @@
   font-weight: 800;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #e8186e;
+  color: #ea028c;
   margin: 0 0 1rem;
 }
 
@@ -145,7 +145,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #e8186e;
+  background: #ea028c;
 }
 
 .ak-label {
@@ -154,13 +154,13 @@
 }
 
 .ak-highlight {
-  color: #e8186e;
+  color: #ea028c;
   font-weight: 600;
 }
 
 .ak-note {
   background: rgba(255,255,255,0.04);
-  border-left: 3px solid #e8186e;
+  border-left: 3px solid #ea028c;
   padding: 0.75rem 1rem;
   border-radius: 0 8px 8px 0;
 }
@@ -182,7 +182,7 @@
 }
 
 .ak-link {
-  color: #e8186e;
+  color: #ea028c;
   text-decoration: none;
   font-weight: 500;
   transition: opacity 0.2s;

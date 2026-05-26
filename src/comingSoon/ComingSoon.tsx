@@ -87,7 +87,7 @@ export default function ComingSoon() {
           <p className="ks-coming-soon">Hamarosan elérhető</p>
 
           <p className="ks-legal">
-            *Feliratkozással elfogadod az{" "}
+            *A Feliratkozással elfogadod az{" "}
             <a href="#/adatkezeles" className="ks-legal-link">Adatkezelési tájékoztatónkat</a>.
           </p>
         </div>
