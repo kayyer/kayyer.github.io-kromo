@@ -47,55 +47,57 @@ export default function ComingSoon() {
       {/* spacer pushes content below the kromogear title in the background image */}
 
 
-      <div className="flex justify-end ks-content">
+      <div style={{paddingBottom: '12vw' }} className="flex justify-end ks-content">
         <Image
           src={myImage}
           alt="KromoGear Logo"
           style={{
             width: "50%",
             maxWidth: "50%",
-            height: "auto"
+            height: "auto",
+            marginBottom: "2rem"
           }}
         />
-        <div style={{ flexDirection: "column" }} className="flex items-center justify-center gap-5 w-1/2 md:w-1/2 w-5/6">
-          <p className="ks-tagline">
-            Iratkozz fel, hogy elsőként<br />értesülhess az indulásról!
-          </p>
+        <div style={{ flexDirection: "column" }} className="flex items-center justify-center gap-5 w-1/2 md:w-1/2 w-full">
+          <div  style={{ flexDirection: "column" }} className="flex items-center justify-center gap-5 w-1/2 md:w-1/2 w-5/6">
+            <p className="ks-tagline">
+              Iratkozz fel, hogy elsőként<br />értesülhess az indulásról!
+            </p>
 
-          {status === "success" ? (
-            <div className="ks-success">
-              <p className="ks-success-title">Sikeresen feliratkoztál!</p>
-              <p className="ks-success-sub">
-                Értesítünk a következő címen: <strong>{email}</strong>
-              </p>
-            </div>
-          ) : (
-            <>
-              <div className="ks-input-row">
-                <input
-                  className="ks-input"
-                  type="email"
-                  placeholder="Írd be az e-mail címed"
-                  value={email}
-                  autoComplete="email"
-                  onChange={(e) => { setEmail(e.target.value); if (errorMsg) setErrorMsg(""); }}
-                  onKeyDown={(e) => e.key === "Enter" && handleSubscribe()}
-                  aria-label="E-mail cím"
-                />
-                <button
-                  className="ks-btn"
-                  onClick={handleSubscribe}
-                  disabled={status === "loading"}
-                >
-                  {status === "loading" ? <div className="spinner" /> : "Feliratkozás*"}
-                </button>
+            {status === "success" ? (
+              <div className="ks-success">
+                <p className="ks-success-title">Sikeresen feliratkoztál!</p>
+                <p className="ks-success-sub">
+                  Értesítünk a következő címen: <strong>{email}</strong>
+                </p>
               </div>
-              {errorMsg && <p className="ks-error">{errorMsg}</p>}
-            </>
-          )}
+            ) : (
+              <>
+                <div className="ks-input-row">
+                  <input
+                    className="ks-input"
+                    type="email"
+                    placeholder="Írd be az e-mail címed"
+                    value={email}
+                    autoComplete="email"
+                    onChange={(e) => { setEmail(e.target.value); if (errorMsg) setErrorMsg(""); }}
+                    onKeyDown={(e) => e.key === "Enter" && handleSubscribe()}
+                    aria-label="E-mail cím"
+                  />
+                  <button
+                    className="ks-btn"
+                    onClick={handleSubscribe}
+                    disabled={status === "loading"}
+                  >
+                    {status === "loading" ? <div className="spinner" /> : "Feliratkozás*"}
+                  </button>
+                </div>
+                {errorMsg && <p className="ks-error">{errorMsg}</p>}
+              </>
+            )}
 
-          <p className="ks-coming-soon">Hamarosan elérhető</p>
-
+            <p className="ks-coming-soon">Hamarosan elérhető</p>
+          </div>
           <p className="ks-legal">
             *A Feliratkozással elfogadod az{" "}
             <a href="#/adatkezeles" className="ks-legal-link">Adatkezelési tájékoztatónkat</a>.

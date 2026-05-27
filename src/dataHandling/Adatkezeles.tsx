@@ -5,7 +5,7 @@ export default function Adatkezeles() {
     <div className="ak-wrap">
       <div className="ak-overlay" />
       <div className="ak-container">
-        <a href="/kayyer.github.io-kromo/" className="ak-back">
+        <a href="/" className="ak-back">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="15 18 9 12 15 6" />
           </svg>
