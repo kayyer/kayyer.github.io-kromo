@@ -40,11 +40,12 @@ html, body, #root {
   padding: 0 clamp(1rem, 5vw, 8rem) clamp(1.5rem, 4vh, 4rem);
   gap: clamp(0.75rem, 1.5vh, 1.25rem);
   animation: fadeUp 0.6s ease both;
+  padding-bottom: 8vw;
 }
 
 @media (max-width: 768px) {
   .ks-content {
-    padding-bottom: 0.3rem;
+      padding-bottom: 1vw !important;
   }
 
 }

@@ -47,7 +47,7 @@ export default function ComingSoon() {
       {/* spacer pushes content below the kromogear title in the background image */}
 
 
-      <div style={{paddingBottom: '12vw' }} className="flex justify-end ks-content">
+      <div className="flex justify-end ks-content">
         <Image
           src={myImage}
           alt="KromoGear Logo"
@@ -55,7 +55,7 @@ export default function ComingSoon() {
             width: "50%",
             maxWidth: "50%",
             height: "auto",
-            marginBottom: "2rem"
+            marginBottom: "0.3rem"
           }}
         />
         <div style={{ flexDirection: "column" }} className="flex items-center justify-center gap-5 w-1/2 md:w-1/2 w-full">
