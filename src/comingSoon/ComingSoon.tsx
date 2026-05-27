@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./ComingSoon.css";
 import { Image } from "@fluentui/react-components";
-import myImage from './src/assets/KROMOGEAR.png';
+import myImage from '../assets/KROMOGEAR.png';
 type Status = "idle" | "loading" | "success" | "error";
 
 export default function ComingSoon() {
