@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://kayyer.github.io/kayyer.github.io-kromo",
+  "homepage": "https://www.kromogear.com",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
