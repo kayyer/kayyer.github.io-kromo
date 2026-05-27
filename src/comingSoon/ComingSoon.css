@@ -44,7 +44,7 @@ html, body, #root {
 
 @media (max-width: 768px) {
   .ks-content {
-    padding-bottom: 3px;
+    padding-bottom: 0.3rem;
   }
 
 }
