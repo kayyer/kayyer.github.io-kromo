@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./ComingSoon.css";
 import { Image } from "@fluentui/react-components";
-
+import myImage from './src/assets/KROMOGEAR.png';
 type Status = "idle" | "loading" | "success" | "error";
 
 export default function ComingSoon() {
@@ -49,7 +49,7 @@ export default function ComingSoon() {
 
       <div className="flex justify-end ks-content">
         <Image
-          src="./src/assets/KROMOGEAR.png"
+          src={myImage}
           alt="KromoGear Logo"
           style={{
             width: "50%",
