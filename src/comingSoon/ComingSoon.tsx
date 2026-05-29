@@ -59,7 +59,7 @@ export default function ComingSoon() {
           }}
         />
         <div style={{ flexDirection: "column" }} className="flex items-center justify-center gap-5  md:w-1/2 w-full">
-          <div  style={{ flexDirection: "column" }} className="flex items-center justify-center gap-5   md:w-full w-5/6">
+          <div  style={{ flexDirection: "column" }} className=" ks-input-section w-full flex items-center justify-center gap-5">
             <p className="ks-tagline">
               Iratkozz fel, hogy elsőként<br />értesülhess az indulásról!
             </p>

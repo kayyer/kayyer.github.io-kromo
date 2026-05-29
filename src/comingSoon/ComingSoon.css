@@ -221,6 +221,13 @@ html, body, #root {
     gap: 12px;
   }
 
+  @media (max-width: 600px) {
+  .ks-input-section {
+       width: 85%; 
+  }
+
+}
+
   .ks-input {
     width: 100%;
     height: 56px;
