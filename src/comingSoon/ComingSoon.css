@@ -106,8 +106,6 @@ html, body, #root {
 
 /* ── Button ── */
 .ks-btn {
-  height: clamp(44px, 5vh, 56px);
-  padding: 0 clamp(16px, 2vw, 26px);
   background: #000000;
   border: none;
   border-radius: 50px;
@@ -124,8 +122,6 @@ html, body, #root {
   justify-content: center;
   gap: 8px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.3);
-  flex-shrink: 0;
-  box-sizing: border-box;
 }
 
 .ks-btn:hover   { background: #333; }

@@ -85,7 +85,7 @@ export default function ComingSoon() {
                     aria-label="E-mail cím"
                   />
                   <button
-                    className="ks-btn"
+                    className="ks-btn p-3 px-4"
                     onClick={handleSubscribe}
                     disabled={status === "loading"}
                   >
